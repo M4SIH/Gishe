@@ -1,0 +1,15 @@
+.leftLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  right: 5%;
+}
+.rightLinks {
+  margin-left: 2%;
+}
+.username {
+  margin-right: 10px;
+  font-family: Tahoma;
+  color: rgb(175, 175, 175);
+}
