@@ -1,6 +1,6 @@
 .loginBackground {
   position: relative;
-  height: 100vh;
+  height: 94vh;
   background: url(../../assets/images/loginFormBackground.jpg) no-repeat center;
   background-size: cover;
   overflow: hidden;

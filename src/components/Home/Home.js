@@ -3,7 +3,7 @@ import Carousel from "../../shared/Carousel";
 
 const Home = () => {
   const movies = getMovies();
-  return <Carousel movies={movies} />;
+  return <Carousel url={"movie"} isNeedButton={true} items={movies} />;
 };
 
 export default Home;

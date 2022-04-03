@@ -5,7 +5,7 @@
 }
 
 .swiper-slide {
-  text-align: center;
+  text-align: left;
   font-size: 18px;
   background: rgb(0, 0, 0);
   background-size: cover;
@@ -31,25 +31,32 @@
   object-fit: cover;
 }
 .caption {
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  background: rgba(59, 49, 49, 0.72);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(1.9px);
-  -webkit-backdrop-filter: blur(1.9px);
+  background: rgb(27, 26, 26);
+  background: linear-gradient(
+    0deg,
+    rgba(27, 26, 26, 0.9920343137254902) 38%,
+    rgba(0, 0, 0, 0) 100%
+  );
   color: white;
+  height: 35%;
+  width: 70%;
   bottom: 0%;
-  left: 15%;
   z-index: 10;
+}
+.caption h3{
+  padding: 2vw;
+
 }
 .button {
   display: inline-flex;
   height: 35px;
   width: 110px;
   border: 2px solid #bfc0c0;
-  margin: 10px 10px 10px 10px;
+  padding: 5px;
   color: #bfc0c0;
-  /* text-transform: uppercase; */
   text-decoration: none;
   font-size: 0.8em;
   align-items: center;
@@ -57,9 +64,12 @@
   overflow: hidden;
 }
 #carouselButton {
-  position: relative;
+  position: absolute;
+  right: 4%;
+  bottom: 18%;
   overflow: hidden;
   cursor: pointer;
+  background-color: rgb(48, 47, 47);
 }
 
 #carouselButton .link {
@@ -69,7 +79,8 @@
   color: white;
 }
 #carouselButton i {
-  font-size: 1.2em;
+  margin-left: 5px;
+  font-size: 1.5em;
 }
 
 #slide {

@@ -1,14 +1,22 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import { Link } from "react-router-dom";
-
-// import "swiper/css";
-// import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./Carousel.css";
 
 const Carousel = (props) => {
+  const renderButton = (id, url) => {
+    return (
+      <div className="button" id="carouselButton">
+        <div id="slide"></div>
+        <Link className="link" to={`/${url}/${id}`}>
+          Buy Ticket
+        </Link>
+        <i className="bi bi-ticket-perforated-fill link"></i>
+      </div>
+    );
+  };
   return (
     <>
       <Swiper
@@ -17,19 +25,13 @@ const Carousel = (props) => {
         modules={[Navigation]}
         className="mySwiper"
       >
-        {props.movies.map((movie) => (
-          <SwiperSlide key={movie.id}>
+        {props.items.map((item) => (
+          <SwiperSlide key={item.id}>
             <div className="caption">
-              <h4>{movie.title}</h4>
-              <div className="button" id="carouselButton">
-                <div id="slide"></div>
-                <Link className="link" to="/movie">
-                  Buy Ticket
-                </Link>
-                <i className="bi bi-ticket-perforated-fill link"></i>
-              </div>
+              <h3>{item.title}</h3>
+              {props.isNeedButton && renderButton(item.id, props.url)}
             </div>
-            <img src={movie.src} alt={movie.title}></img>
+            <img src={item.src} alt={item.title}></img>
           </SwiperSlide>
         ))}
       </Swiper>

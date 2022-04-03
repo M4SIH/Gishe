@@ -1,0 +1,31 @@
+.errorBackground {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 94vh;
+  padding-top: 10vh;
+  background-color: #dadada;
+}
+.error {
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: rgba(0, 0, 0, 0.2) 2px 6px 5px,
+    rgba(255, 255, 255, 0.4) 0 -4px 30px;
+  text-align: center;
+}
+.button {
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #141414;
+  border: 1px solid rgba(54, 54, 54, 0.6);
+  font-weight: 700;
+  position: relative;
+  outline: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 45px;
+  width: 120px;
+  opacity: 1;
+}

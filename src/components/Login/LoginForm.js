@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import useInput from "../../hooks/use-input";
 import classes from "../Login/LoginForm.module.css";
 
@@ -20,6 +21,8 @@ const LoginForm = (props) => {
     reset: resetPasswordInput,
   } = useInput((value) => value.trim() !== "" && value.trim().length > 7);
 
+  const navigate = useNavigate();
+
   let formIsValid = false;
   if (enteredUsernameIsValid && enteredPasswordIsValid) {
     formIsValid = true;
@@ -31,6 +34,7 @@ const LoginForm = (props) => {
     props.onLogin(enteredUsername, enteredPassword);
     resetUsernameInput();
     resetPasswordInput();
+    navigate("/");
   };
 
   const usernameInputClass = usernameInputHasError

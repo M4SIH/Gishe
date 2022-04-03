@@ -6,7 +6,7 @@ const Navbar = (props) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
       <div className="container-fluid">
-        <Link to="/home" className="navbar-brand">
+        <Link to="/" className="navbar-brand">
           CinemaTicket
         </Link>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
