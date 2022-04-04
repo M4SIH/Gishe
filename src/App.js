@@ -7,6 +7,7 @@ import Navbar from "./components/MainHeader/Navbar";
 import Movie from "./components/Movies/Movie";
 import MoviesTable from "./components/Movies/MoviesTable";
 import PageNotFound from "./components/PageNotFound";
+import TheatersTable from "./components/Theaters/TheatersTable";
 
 function App() {
   const [userInformation, setUserInformation] = useState({
@@ -43,6 +44,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/movies" element={<MoviesTable />} />
+        <Route path="/Theaters" element={<TheatersTable />} />
         <Route
           path="/loginform"
           element={<LoginForm onLogin={loginHandler} />}

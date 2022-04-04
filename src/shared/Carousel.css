@@ -1,7 +1,7 @@
 .swiper {
   position: relative;
-  width: 100%;
-  height: 100%;
+  height: 94vh;
+  width: 100vw;
 }
 
 .swiper-slide {
@@ -9,7 +9,6 @@
   font-size: 18px;
   background: rgb(0, 0, 0);
   background-size: cover;
-  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -26,8 +25,8 @@
 
 .swiper-slide img {
   display: block;
-  width: 70%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
 }
 .caption {
@@ -41,17 +40,27 @@
     rgba(0, 0, 0, 0) 100%
   );
   color: white;
-  height: 35%;
-  width: 70%;
+  height: 30%;
+  width: 100%;
   bottom: 0%;
   z-index: 10;
 }
-.caption h3{
-  padding: 2vw;
-
+.caption h3 {
+  position: relative;
+  left: 2vw;
+  top: 8vh;
+}
+.buttons{
+  position: absolute;
+  bottom: 2vh;
+  right:2vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 20vw;
 }
 .button {
-  display: inline-flex;
+  /* display: inline-flex; */
   height: 35px;
   width: 110px;
   border: 2px solid #bfc0c0;
@@ -64,12 +73,12 @@
   overflow: hidden;
 }
 #carouselButton {
-  position: absolute;
-  right: 4%;
-  bottom: 18%;
+  /* position: absolute; */
+  /* right: 4%;
+  bottom: 12%; */
   overflow: hidden;
   cursor: pointer;
-  background-color: rgb(48, 47, 47);
+  background-color: rgb(73, 82, 156);
 }
 
 #carouselButton .link {
@@ -87,7 +96,7 @@
   width: 100%;
   height: 100%;
   left: -200px;
-  background: #bfc0c0;
+  background: rgb(184, 185, 255);
   position: absolute;
   transition: all 0.35s ease-Out;
   bottom: 0;
