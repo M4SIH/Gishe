@@ -18,21 +18,23 @@ const Carousel = (props) => {
           <SwiperSlide key={item.id}>
             <div className="caption">
               <h3>{item.title}</h3>
-              <div className="buttons">
-                <Button
-                  url={props.url}
-                  id={item.id}
-                  text={"More Info"}
-                  buttonId={"carouselButton"}
-                />
-                <Button
-                  url={props.url}
-                  id={item.id}
-                  text={"Buy Ticket"}
-                  buttonId={"carouselButton"}
-                  icon={true}
-                />
-              </div>
+              {props.isNeedButton && (
+                <div className="buttons">
+                  <Button
+                    url={props.url}
+                    id={item.id}
+                    text={"More Info"}
+                    buttonId={"carouselButton"}
+                  />
+                  <Button
+                    url={props.url}
+                    id={item.id}
+                    text={"Buy Ticket"}
+                    buttonId={"carouselButton"}
+                    icon={true}
+                  />
+                </div>
+              )}
             </div>
             <img src={item.src} alt={item.title}></img>
           </SwiperSlide>

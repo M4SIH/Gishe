@@ -1,5 +1,5 @@
-import { getMovies } from "../../services/FakeMovieService";
 import Carousel from "../../shared/Carousel";
+import { getMovies } from "./../../services/FakeMovieService";
 
 const Home = () => {
   const movies = getMovies();

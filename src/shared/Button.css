@@ -1,0 +1,47 @@
+.button {
+  height: 35px;
+  width: 110px;
+  border: 2px solid #bfc0c0;
+  padding: 5px;
+  color: #bfc0c0;
+  text-decoration: none;
+  font-size: 0.8em;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+#carouselButton {
+  overflow: hidden;
+  cursor: pointer;
+  background-color: rgb(73, 82, 156);
+}
+
+#carouselButton .link {
+  position: relative;
+  text-decoration: none;
+  transition: all 0.35s ease-Out;
+  color: white;
+}
+#carouselButton i {
+  margin-left: 5px;
+  font-size: 1.5em;
+}
+
+#slide {
+  width: 100%;
+  height: 100%;
+  left: -200px;
+  background: rgb(184, 185, 255);
+  position: absolute;
+  transition: all 0.35s ease-Out;
+  bottom: 0;
+}
+
+#carouselButton:hover #slide {
+  left: 0;
+}
+
+#carouselButton:hover .link {
+  font-weight: bold;
+  color: #2d3142;
+}

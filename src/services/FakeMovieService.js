@@ -1,3 +1,4 @@
+
 const movies = [
   {
     id: 1,
@@ -24,3 +25,4 @@ const movies = [
 export function getMovies() {
   return movies;
 }
+
