@@ -1,7 +1,4 @@
 .button {
-  height: 35px;
-  width: 110px;
-  border: 2px solid #bfc0c0;
   padding: 5px;
   color: #bfc0c0;
   text-decoration: none;
@@ -11,6 +8,8 @@
   overflow: hidden;
 }
 #carouselButton {
+  height: 40px;
+  width: 110px;
   overflow: hidden;
   cursor: pointer;
   background-color: rgb(73, 82, 156);
@@ -44,4 +43,35 @@
 #carouselButton:hover .link {
   font-weight: bold;
   color: #2d3142;
+}
+
+#MovieTableButton {
+  height: 40px;
+  width: 110px;
+  align-items: center;
+  background: #48e970;
+  border: 0 solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  color: #1a202c;
+  display: inline-flex;
+  font-family: Inter, sans-serif;
+  justify-content: center;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: transform .2s;
+}
+#MovieTableButton .link {
+  text-decoration: none;
+  color: white;
+}
+#MovieTableButton:hover{
+    transform: scale(1.08);
 }

@@ -28,7 +28,7 @@ export default function MoviesTable() {
             text="Buy Ticket"
             url="movie"
             id={value}
-            buttonId="carouselButton"
+            buttonId="MovieTableButton"
           />
         ),
       },

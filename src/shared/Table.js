@@ -1,5 +1,6 @@
 import React from "react";
 import { useTable, useSortBy } from "react-table/dist/react-table.development";
+import "./Table.css";
 
 export default function Table({ columns, data }) {
   const {
@@ -18,7 +19,10 @@ export default function Table({ columns, data }) {
   const firstPageRows = rows.slice(0, 20);
   return (
     <>
-      <table className="table" {...getTableProps()}>
+      <table
+        className="table table-dark table-striped w-75 mx-auto mt-5"
+        {...getTableProps()}
+      >
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
