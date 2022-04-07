@@ -1,5 +1,6 @@
 import React from "react";
 import { useTable, useSortBy } from "react-table/dist/react-table.development";
+import Button from "./Button";
 import "./Table.css";
 
 export default function Table({ columns, data }) {
@@ -13,6 +14,9 @@ export default function Table({ columns, data }) {
     {
       columns,
       data,
+      initialState: {
+        hiddenColumns: ["src"],
+      },
     },
     useSortBy
   );
@@ -51,6 +55,15 @@ export default function Table({ columns, data }) {
                     <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
                   );
                 })}
+                <td key={row.values.id}>
+                  <Button
+                    text="Buy Ticket"
+                    url="movie"
+                    data={row.values}
+                    params={row.values.id}
+                    buttonId="MovieTableButton"
+                  />
+                </td>
               </tr>
             );
           })}

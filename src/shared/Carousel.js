@@ -14,7 +14,7 @@ const Carousel = (props) => {
         modules={[Navigation]}
         className="mySwiper"
       >
-        {props.items.map((item) => (
+        {props.items.slice(0, props.size).map((item) => (
           <SwiperSlide key={item.id}>
             <div className="caption">
               <h3>{item.title}</h3>
@@ -22,13 +22,14 @@ const Carousel = (props) => {
                 <div className="buttons">
                   <Button
                     url={props.url}
-                    id={item.id}
+                    params={item.id}
                     text={"More Info"}
                     buttonId={"carouselButton"}
                   />
                   <Button
                     url={props.url}
-                    id={item.id}
+                    params={item.id}
+                    data={item}
                     text={"Buy Ticket"}
                     buttonId={"carouselButton"}
                     icon={true}

@@ -21,6 +21,13 @@ const movies = [
     rate: 8.4,
     src: require("../assets/images/Dune.jpg"),
   },
+  {
+    id: 4,
+    title: "Spidrer Man: No Way Home ",
+    genre: "Action",
+    rate: 7.8,
+    src: require("../assets/images/Spider.man.no.way.home.jpg"),
+  },
 ];
 export function getMovies() {
   return movies;
