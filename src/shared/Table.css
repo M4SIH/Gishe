@@ -2,5 +2,12 @@
   -webkit-box-shadow: 5px 5px 12px 2px rgb(73, 82, 156);
   box-shadow: 5px 5px 12px 2px rgb(73, 82, 156);
   border-collapse: collapse;
-  /* border-radius: 11px; */
+}
+.tableButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.buttonsColumn {
+  width: 30%;
 }

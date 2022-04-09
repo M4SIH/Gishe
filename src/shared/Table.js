@@ -1,25 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useTable, useSortBy } from "react-table/dist/react-table.development";
+import MovieForm from "../components/Movies/MovieForm";
+import CartContext from "../store/cart-context";
 import Button from "./Button";
 import "./Table.css";
 
 export default function Table({ columns, data }) {
-  const {
-    getTableProps, // table props from react-table
-    getTableBodyProps, // table body props from react-table
-    headerGroups, // headerGroups, if your table has groupings
-    rows, // rows for the table based on the data passed
-    prepareRow, // Prepare the row (this function needs to be called for each row before getting the row props)
-  } = useTable(
-    {
-      columns,
-      data,
-      initialState: {
-        hiddenColumns: ["src"],
+  const cartCxt = useContext(CartContext);
+
+  const addToCartHandler = (amount, data) => {
+    cartCxt.addItem({
+      id: data.id,
+      title: data.title,
+      amount: amount,
+      price: data.price,
+    });
+  };
+
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable(
+      {
+        columns,
+        data,
+        initialState: {
+          hiddenColumns: ["src", "summary", "id", "price"],
+        },
       },
-    },
-    useSortBy
-  );
+      useSortBy
+    );
   const firstPageRows = rows.slice(0, 20);
   return (
     <>
@@ -55,14 +63,21 @@ export default function Table({ columns, data }) {
                     <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
                   );
                 })}
-                <td key={row.values.id}>
-                  <Button
-                    text="Buy Ticket"
-                    url="movie"
-                    data={row.values}
-                    params={row.values.id}
-                    buttonId="MovieTableButton"
-                  />
+                <td className="buttonsColumn" key={row.values.id}>
+                  <div className="tableButtons">
+                    <MovieForm
+                      id={row.values.id}
+                      onAddToCart={addToCartHandler}
+                      onRecieveData={row.values}
+                    />
+                    <Button
+                      text="More Info"
+                      url="movie"
+                      data={row.values}
+                      params={row.values.id}
+                      buttonClass="carouselButton"
+                    />
+                  </div>
                 </td>
               </tr>
             );

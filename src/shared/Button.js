@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 import "./Button.css";
 
 export default function Button(props) {
-  const { url, params, text, icon, buttonId, data } = props;
+  const { url, params, text, iconClass, buttonClass, data } = props;
   return (
-    <div className="button" id={buttonId}>
+    <div className="button" id={buttonClass}>
       <div id="slide"></div>
-      <Link className="link" to={`/${url}/${params}`} state={{ data: data }}>
-        {text}
-      </Link>
-      {icon && <i className="bi bi-ticket-perforated-fill link"></i>}
+      {url && (
+        <Link className="link" to={`/${url}/${params}`} state={{ data: data }}>
+          {text}
+        </Link>
+      )}
+      {iconClass && <i className={`${iconClass} link`}></i>}
     </div>
   );
 }

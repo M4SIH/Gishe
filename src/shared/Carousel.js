@@ -24,15 +24,15 @@ const Carousel = (props) => {
                     url={props.url}
                     params={item.id}
                     text={"More Info"}
-                    buttonId={"carouselButton"}
+                    buttonClass={"carouselButton"}
                   />
                   <Button
                     url={props.url}
                     params={item.id}
                     data={item}
-                    text={"Buy Ticket"}
-                    buttonId={"carouselButton"}
-                    icon={true}
+                    text="Buy Ticket"
+                    buttonClass="carouselButton"
+                    iconClass="bi bi-ticket-perforated-fill"
                   />
                 </div>
               )}

@@ -8,6 +8,10 @@ export default function MoviesTable() {
   const columns = useMemo(
     () => [
       {
+        Header: "",
+        accessor: "id",
+      },
+      {
         Header: "Title",
         accessor: "title", // accessor is the "key" in the data
       },
@@ -22,6 +26,15 @@ export default function MoviesTable() {
       {
         Header: "",
         accessor: "src",
+      },
+      {
+        Header: "",
+        accessor: "summary",
+      },
+
+      {
+        Header: "",
+        accessor: "price",
       },
     ],
     []

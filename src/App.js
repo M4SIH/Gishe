@@ -3,11 +3,13 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home/Home";
 import LoginForm from "./components/Login/LoginForm";
+import Cart from "./components/MainHeader/Cart";
 import Navbar from "./components/MainHeader/Navbar";
 import Movie from "./components/Movies/Movie";
 import MoviesTable from "./components/Movies/MoviesTable";
 import PageNotFound from "./components/PageNotFound";
 import TheatersTable from "./components/Theaters/TheatersTable";
+import CartProvider from "./store/CartProvider";
 
 function App() {
   const [userInformation, setUserInformation] = useState({
@@ -15,6 +17,7 @@ function App() {
     password: "",
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [cartIsShown, setCartIsShown] = useState(false);
 
   useEffect(() => {
     const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
@@ -33,25 +36,36 @@ function App() {
     localStorage.removeItem("isLoggedIn");
     setIsLoggedIn(false);
   };
+
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
+
   return (
-    <React.Fragment>
+    <CartProvider>
       <Navbar
         userInformation={userInformation}
         isLoggedIn={isLoggedIn}
         onLogout={logoutHandler}
+        onShowCart={showCartHandler}
       />
+      {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<Movie />} />
         <Route path="/movies" element={<MoviesTable />} />
-        <Route path="/Theaters" element={<TheatersTable />} />
+        <Route path="/theaters" element={<TheatersTable />} />
         <Route
           path="/loginform"
           element={<LoginForm onLogin={loginHandler} />}
         />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-    </React.Fragment>
+    </CartProvider>
   );
 }
 
